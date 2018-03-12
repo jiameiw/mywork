@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<style type="text/css">
+	*{marin:0 auto;padding: 0;}
+		ul li{float: left;display: block;width: 200px;height: 40px;background:#FF9676;position: relative;}
+		ul li a:before{content:''; width: 200px;height: 0;left:0;bottom:0;position: absolute;transition: ease-in-out 0.5s;}
+		ul li:hover a:before{content:'';background: #97ADAB;height: 40px;}
+		/*去掉top:0;就是音符效果*/
+		ul li a span{position: absolute;top: 10px;left:80px;color:white;}
+	</style>
+</head>
+<body>
+<ul>
+	<li><a href="javascript:;"><span>title1</span></a></li>
+	<li><a href="javascript:;"><span>title2</span></a></li>
+	<li><a href="javascript:;"><span>title3</span></a></li>
+	<li><a href="javascript:;"><span>title4</span></a></li>
+</ul>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+       $('ul li').click(function(){
+       		var num=$('ul li').index(this);
+           $('ul li').eq(num).css("background","#97ADAB").siblings().css("background","");
+         });
+       });
+</script>
+</html>

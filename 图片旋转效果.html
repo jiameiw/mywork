@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>倚天互联网+政务服务</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+ <style type="text/css">
+   /*.center-nav__list{width: 1250px;height: 160px;margin: 0px auto;}*/
+.center-nav__list a{display: block;opacity:0.5;width:151px;height: 160px;background: red;transition-property: all;transition-duration: 1s;transition-timing-function: initial;transition-delay: initial;}                        
+ </style>
+</HEAD>
+<BODY>
+  <div class="center-nav__list"> 
+        <a>dvfsdf</a>
+    </ul>
+  </div>
+</BODY>
+<script type="text/javascript">
+   $(document).ready(function(){
+       $('.center-nav__list').mouseenter(function(){
+            $('a').css({ 'transform': 'rotateY( 180deg )'})
+      });
+        $('.center-nav__list').mouseleave(function(){
+            $('a').css({ 'transform': 'rotateY( 360deg )'})
+       });
+         });
+
+</script>
+</HTML>

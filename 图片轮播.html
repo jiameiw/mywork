@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片轮播</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>	<style type="text/css">
+		.swiper-container {width: 100%;height: 100%;}
+		img{width: 100%}
+		.content{width: 100%;display: flex;flex-flow: row wrap;font-size: 0px;}  
+		.content div{width: 25%;font-size: 30px;height: 145px;line-height: 145px;text-align: center;}
+		.content__list{background: url('icon.png') no-repeat;}
+		.content__list1{background-position: 0px 0px;}
+	</style>
+</head>
+<body>
+	<div class="banner">
+    	<div class="swiper-container">
+      		<div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="banner.jpg"></div>
+	            <div class="swiper-slide"><img src="banner.jpg"></div>
+	            <div class="swiper-slide"><img src="banner.jpg"></div>
+            </div>
+            <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		    <!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+		    
+		    <!-- 如果需要滚动条 -->
+		    <div class="swiper-scrollbar"></div>
+		</div>
+    </div>
+    <div class="content">
+    	<div class="content__list content__list1">房屋出租</div>
+    	<div class="content__list content__list2">房屋出租</div>
+    	<div class="content__list content__list3">房屋出租</div>
+    	<div class="content__list content__list4">房屋出租</div>
+    	<div class="content__list content__list5">房屋出租</div>
+    	<div class="content__list content__list6">房屋出租</div>
+    	<div class="content__list content__list7">房屋出租</div>
+    	<div class="content__list content__list8">房屋出租</div>
+    	<div class="content__list content__list9">房屋出租</div>
+    	<div class="content__list content__list10">房屋出租</div>
+    	<div class="content__list content__list11">房屋出租</div>
+    	<div class="content__list content__list12">房屋出租</div>
+    	<div class="content__list content__list13">房屋出租</div>
+    	<div class="content__list content__list14">房屋出租</div>
+    	<div class="content__list content__list15">房屋出租</div>
+    	<div class="content__list content__list16">房屋出租</div>
+    </div>
+    <script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+        pagination: '.swiper-pagination',
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		paginationClickable: true,
+		spaceBetween: 30,
+		loop:true,
+		// centeredSlides: true,
+		autoplay: 2000,
+		autoplayDisableOnInteraction: false,//当鼠标点击或滑动的时候停止自动轮播（true）反之false就是不影响
+ 		// effect: ''
+  })      
+  </script>
+</body>
+</html>

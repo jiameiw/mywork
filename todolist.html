@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<style type="text/css">
+	*{margin:0;padding: 0;}
+	input{
+		width: 300px;
+		height: 30px;
+		font-size: 15px;
+	}
+	input::-webkit-input-placeholder{font-size: 15px;color: #ddd;}
+		#mylist li{
+			list-style:none;
+			width: 300px;
+			height: 30px;
+			border:1px solid #ddd;
+			border-top: none;
+			position: relative;
+		}
+		#mylist li a{
+			position: absolute;
+			right: 0;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			display: none;
+			color: red;
+		}
+		#mylist li:hover a{
+			display: inline-block;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<input type="text" name="text" id="text" placeholder="输入内容" onkeydown="javascript:senddata(this)" autocomplet="on">
+<ul id="mylist">
+
+</ul>
+</body>
+<script type="text/javascript">
+	function senddata(){
+		if   (event.keyCode==13)   {
+		var value=document.getElementById("text").value;
+		var obj;
+		obj=document.getElementById("mylist");
+		// obj.innerHTML=value;
+		// console.log(value);
+		var li=document.createElement("li");
+		li.innerHTML=value+"<a>X</a>";
+		obj.appendChild(li);
+		document.getElementById("text").value="";
+		// document.getElementsByTagName("a").onclick=function(){
+		// 	console.log("dd");
+		// }
+	}
+	}
+	
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#mylist li").live("click",function(){//jQuery获取动态添加的元素，并对他进行操作。用live()
+		$(this).remove();
+  	});
+  	$("input").on("keydown",function(){
+		var string=$("#mylist").innerHTML;
+		console.log(string);
+  	});
+
+});
+
+</script>
+</html>

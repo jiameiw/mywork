@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<style type="text/css">
+		.box{color: white; position: absolute;left: -200px; width: 200px;height: 200px;background: black;transform: translate(0,0);transition:all 0.7s ease;}
+		.off{transform:translate(200px,0);transition:all 0.7s ease;}
+		button{position: absolute;top:200px;}
+	</style>
+</head>
+<body>
+<div class="box">
+	111
+</div>
+<button>伸缩</button>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('.box').toggleClass('off');
+		});
+	});
+</script>
+</html>

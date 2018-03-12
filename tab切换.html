@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tab切换</title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+<style type="text/css">
+.clr{clear: both;}
+.main{width: 1250px;}
+.title span{cursor: pointer; margin-right: 10px;background-color: red;width: 40px;display: block;float: left;text-align: center;}
+.content{width: 300px;height: 200px;border:1px solid;display: none;float: left;}
+.gradient{width: 500px;height: 100px;background: linear-gradient(to right,rgba(29,138,221,0.5),rgba(29,138,221,1));}
+.img a{display: block; height: 140px;width: 140px;transition-property: all;transition-duration: 1s;}
+.img a{background: url('icon1.png') no-repeat;}
+.img:hover a{transform: rotateY(180deg);background: url('icon1h.png');}
+</style>
+<body>
+	<!-- <div class="main clr">
+		<div class="title">
+			<span>1</span><span>2</span><span>3</span>
+			<div class="clr"></div>
+		</div>
+		<div class="content">第一个</div>
+		<div class="content">第二个</div>
+		<div class="content">第三个</div>
+	</div> -->
+	<!-- <div class="gradient">sdggergr</div> -->
+	<div class="img">
+		<a></a>
+		<!-- <a class="img2"></a> -->
+	</div>
+	
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.content').eq(0).show();
+		$('.title span').click(function(){
+			var num=$('.title span').index(this);
+			// var x=$('.title span').get(num);
+			// alert(x.nodeName+x.innerHTML);
+			$('.content').eq(num).show().siblings('.content').hide();
+		});
+		// $('.img').fadeout($('.img2'));
+
+	});
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>todo list</title>
+    <!-- <lsink  href="static/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <form action="" id="todoForm">
+                    <label for="">将下面输入的文字放入todo list中！</label>
+                    <input type="text" id="todoInput" class="form-control">
+                </form>
+                <p id="todoCount"></p>
+                <ol id="todoList"></ol>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+        (function() {
+    var $todoForm = $('#todoForm');
+    var $todoInput = $('#todoInput');
+    var $todoList = $('#todoList');
+    var $todoCount= $('#todoCount');
+
+    function count(){
+        var len=$todoList.children().length;
+        $todoCount.html(len>0?'现有'+len+'项todo list' : '');
+    }
+
+    $todoForm.submit(function(e){
+
+        var input_value=$todoInput.val();
+        $todoList.append('<li>'+input_value+'&nbsp;<a href="#" class="todoDelete">X</a></li>');
+        $todoInput.val('');
+        count();
+    });
+
+    $todoList.on('click','.todoDelete',function(e){
+
+        $(this).parent().remove();
+        count();
+    });
+})();
+</script>
+</html>
